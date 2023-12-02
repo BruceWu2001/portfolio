@@ -1,7 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-
+import SideNavbar from '@/components/pages/SideNavbar'
+import Topbar from '@/components/pages/Topbar'
+import { Toaster } from '@/components/ui/toaster'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -15,8 +17,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className='dark'>
+      <body className={inter.className}>
+      <main className="relative flex min-h-screen">
+            <SideNavbar/>
+            <div className='relative w-full h-full flex flex-col flex-1'>
+                <Topbar/>
+                <div className='relative w-full h-full flex flex-col'>
+                    {children}
+                </div>
+            </div>
+        </main>
+        <Toaster/>
+        </body>
     </html>
   )
 }
