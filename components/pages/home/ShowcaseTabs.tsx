@@ -37,7 +37,7 @@ export function ShowcaseTabs() {
           <CardHeader>
             <CardTitle>Education</CardTitle>
             <CardDescription>
-              Change your password here. After saving, you'll be logged out.
+              Change your password here. After saving, you will be logged out.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">

@@ -55,7 +55,7 @@ const AboutMeTab = () => {
             <div className="grid grid-flow-row">
                 <p>cumGPA:3.99</p>
                 <p>Merit scholarship</p>
-                <p>Dean's List 2022</p>
+                <p>Dean&aposs List 2022</p>
             </div>
           </CardFooter>
         </Card>

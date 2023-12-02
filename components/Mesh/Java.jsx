@@ -16,9 +16,9 @@ export const Java = (props) => {
   const { nodes, materials, animations } = useGLTF("/models/java.glb");
   const { actions, mixer } = useAnimations(animations, group);
 
-  useEffect(()=>{
-    console.log(actions)
-},[mixer])
+//   useEffect(()=>{
+//     // console.log(actions)
+// },[mixer])
 
   return (
     <group ref={group} {...props} dispose={null}>
