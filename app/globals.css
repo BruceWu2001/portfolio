@@ -56,3 +56,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.storyBorder {
+    padding: 3px;
+    background:   linear-gradient(#132633, #132633) padding-box,
+                  linear-gradient(45deg,#ffd600, #ff7a00,#ff0069,#d300c5) border-box;
+    border-radius: 50%;
+    border: 4px solid transparent;
+  
+    animation: rotate 4s linear infinite;
+  
+  }
