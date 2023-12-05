@@ -2,7 +2,6 @@
 import { Separator } from '@radix-ui/react-menubar'
 import Image from 'next/image'
 import ShowcaseTabs from '@/components/pages/home/ShowcaseTabs'
-import { useState } from 'react'
 import {
     Sheet,
     SheetContent,
@@ -11,9 +10,14 @@ import {
     SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet"
+import Head from 'next/head'
+
 export default function Home() {
-    const [storyVisible, setStoryVisibile] = useState(false)
   return (
+    <>
+    <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.1" />
+      </Head>
         <Sheet>
     <div className='w-full h-full flex flex-col justify-center p-8'>
             <SheetContent>
@@ -28,15 +32,14 @@ export default function Home() {
 
         <div className='w-full min-h-fit flex justify-around py-8 px-12'>
             <SheetTrigger>
-            <div className='relative w-64 h-64 rounded-full bg-secondary flex justify-center items-center storyBorder'>
-                <div className='relative w-60 h-60 rounded-full bg-secondary flex justify-center items-center ring-offset'>
+            <div className='relative w-16 h-16 lg:w-64 lg:h-64 rounded-full bg-secondary flex justify-center items-center storyBorder'>
+                <div className='relative w-14 h-14 lg:w-60 lg:h-60 rounded-full bg-secondary flex justify-center items-center ring-offset'>
                     <Image
                     src="/images/global/profile.png"
                     alt="profile picture"
                     fill
                     objectFit='cover'
                     className='rounded-full bg-secondary'
-                    onClick={() => setStoryVisibile(true)}
                     />
                 </div>
             </div>
@@ -52,5 +55,7 @@ export default function Home() {
         </div>
     </div>
 </Sheet>
+</>
+
   )
 }

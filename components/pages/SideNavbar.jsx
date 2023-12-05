@@ -21,7 +21,7 @@ const SideNavbar = () => {
     return (
     <Layout>
         <div
-        className="w-1/5 h-full justify-between flex flex-col" 
+        className="w-full h-1/6 lg:w-1/5 lg:h-full justify-between flex flex-col" 
         >
             <div className='flex grow shrink-0'>
                 <div style={{width:150, height:150}}>
@@ -32,7 +32,7 @@ const SideNavbar = () => {
                         </Suspense>
                     </View>
                 </div>
-                <Group item1={<JSBall/>} item2={<ReactBall/>} item3={<JSBall/>} />
+                <Group item1={<ReactBall/>} />
             </div>
 
             <div className='flex grow shrink-0'>
@@ -44,25 +44,19 @@ const SideNavbar = () => {
                         </Suspense> 
                     </View>
                 </div>
-                <Group item1={<JSBall/>} item2={<JSBall/>} />
+                <Group />
             </div>
 
-            <div style={{ width: 150, height: 150 }}>
-                <View orbit className='relative h-full  sm:h-48 sm:w-full'>
-                    <Suspense fallback={null}>
-                    <Common />
-                   <PythonBall/>
-                    </Suspense>
-                </View>
-            </div>
-
-            <div style={{ width: 150, height: 150 }}>
-                <View orbit className='relative h-full  sm:h-48 sm:w-full'>
-                    <Suspense fallback={null}>
-                    <Common />
-                   <ReactBall/>
-                    </Suspense>
-                </View>
+            <div className='flex grow shrink-0'>
+                <div style={{ width: 150, height: 150 }}>
+                    <View orbit className='relative h-full  sm:h-48 sm:w-full'>
+                        <Suspense fallback={null}>
+                        <Common />
+                    <PythonBall/>
+                        </Suspense>
+                    </View>
+                </div>
+                <Group />
             </div>
 
            

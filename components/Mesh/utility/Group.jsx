@@ -2,6 +2,8 @@
 
 import {Suspense} from 'react'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
+
 const View = dynamic(() => import('@/components/Mesh/utility/View').then((mod) => mod.View), {
     ssr: false,
     loading: () => (
@@ -16,45 +18,56 @@ const Group = ({item1=null, item2=null, item3=null, item4=null}) => {
   return (
     <div style={{width:150, height:150}} className='flex flex-col justify-between '>
                     <div className='flex flex-row justify-between'>
-                        {item1 && <div style={{width:70, height:70}}>
+                        {item1 ? <div style={{width:70, height:70}}>
                             <View orbit className='w-full h-full  sm:h-48 sm:w-full'>
                                 <Suspense fallback={null}>
                                     <Common />
                                     {item1}
                                 </Suspense>
                             </View>
-                        </div>}
-                        {item2 && <div style={{width:70, height:70}}>
+                        </div> : <DefaultImage/>}
+                        {item2 ? <div style={{width:70, height:70}}>
                             <View orbit className='h-full  sm:h-48 sm:w-full'>
                                 <Suspense fallback={null}>
                                     <Common />
                                     {item2}
                                 </Suspense>
                             </View>
-                        </div>}
+                        </div> : <DefaultImage/>}
                     </div>
 
                     <div className='flex flex-row justify-between'>
-                        {item3 && <div style={{width:70, height:70}}>
+                        {item3 ? <div style={{width:70, height:70}}>
                             <View orbit className='h-full  sm:h-48 sm:w-full'>
                                 <Suspense fallback={null}>
                                     <Common />
                                     {item3}
                                 </Suspense>
                             </View>
-                        </div>}
+                        </div> : <DefaultImage/>}
                         
-                        {item4 && <div style={{width:70, height:70}}>
+                        {item4 ? <div style={{width:70, height:70}}>
                             <View orbit className='h-full  sm:h-48 sm:w-full'>
                                 <Suspense fallback={null}>
                                     <Common />
                                     {item4}
                                 </Suspense>
                             </View>
-                        </div>}
+                        </div> : <DefaultImage/>}
                     </div>
                 </div>
   )
 }
 
 export default Group
+
+
+const DefaultImage = () => {
+    return (
+    <Image
+    src="/images/global/wip.png"
+    width="70"
+    height="70"
+    alt="work in progresss"
+    />)
+}
