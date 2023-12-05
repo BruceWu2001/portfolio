@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className='dark'>
       <body className={inter.className}>
-      <main className="relative flex min-h-screen">
+      <main className="relative flex min-h-screen pt-8">
             <SideNavbar/>
             <div className='relative w-full h-full flex flex-col flex-1'>
                 <Topbar/>

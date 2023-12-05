@@ -75,9 +75,9 @@ const ProjectTab = () => {
                         return (
                         <div
                         key={achievement} 
-                        className="h-[350px] flex shrink-0 grow justify-between p-4">
+                        className="flex shrink-0 grow justify-between">
                             <div className="flex flex-col grow gap-4 flex-shrink-0">
-                                <p className="text-xl mb-8">Project {name}</p>
+                                <p className="text-xl">Project {name}</p>
                                 <Image src={image} alt={name} width={250} height={250}/>
                             </div>
                             <div className="flex flex-col items-end m-4">

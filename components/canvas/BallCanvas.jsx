@@ -82,10 +82,10 @@ export const ReactBall = ({position=[0,0,0]}) => {
     const directionalLight2 = useRef()
     const directionalLight3 = useRef()
     const directionalLight4 = useRef()
-    // useHelper(directionalLight, DirectionalLightHelper, "cyan")
-    // useHelper(directionalLight2, DirectionalLightHelper, "cyan")
-    // useHelper(directionalLight3, DirectionalLightHelper, "cyan")
-    // useHelper(directionalLight4, DirectionalLightHelper, "cyan")
+    useHelper(directionalLight, DirectionalLightHelper, "cyan")
+    useHelper(directionalLight2, DirectionalLightHelper, "cyan")
+    useHelper(directionalLight3, DirectionalLightHelper, "cyan")
+    useHelper(directionalLight4, DirectionalLightHelper, "cyan")
     
     return (
         <object3D scale={0.6} position={position} rotation={[0,0,0]} >

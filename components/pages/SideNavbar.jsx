@@ -4,8 +4,9 @@ import {Suspense} from 'react'
 import CanvasLoader from "../Loader"
 import { Layout } from '@/components/Mesh/utility/Layout'
 import dynamic from 'next/dynamic'
-import { JSBall, JavaBall, PythonBall, ReactBall } from "@/components/canvas/BallCanvas"
-import Group from "@/components/Mesh/utility/Group"
+// import { JSBall, JavaBall, PythonBall, ReactBall } from "@/components/canvas/BallCanvas"
+import * as balls from "@/components/canvas/BallCanvas"
+
 const View = dynamic(() => import('@/components/Mesh/utility/View').then((mod) => mod.View), {
     ssr: false,
     loading: () => (
@@ -17,49 +18,23 @@ const View = dynamic(() => import('@/components/Mesh/utility/View').then((mod) =
 const Common = dynamic(() => import('@/components/Mesh/utility/View').then((mod) => mod.Common), { ssr: false })
   
 const SideNavbar = () => {
-
     return (
     <Layout>
         <div
-        className="w-full h-1/6 lg:w-1/5 lg:h-full justify-between flex flex-col" 
-        >
-            <div className='flex grow shrink-0'>
-                <div style={{width:150, height:150}}>
+        className="w-full h-screen grid grid-cols-2" 
+        >   
+            {Object.keys(balls).map((ball, index) => {
+                const Ball = balls[ball];
+                return (
+                <div className='w-full h-full max-w-[150px] max-h-[150px]'  key={index}>
                     <View orbit className='h-full sm:h-48 sm:w-full'>
                         <Suspense fallback={null}>
                             <Common />
-                            <JSBall/>
+                            <Ball />
                         </Suspense>
                     </View>
-                </div>
-                <Group item1={<ReactBall/>} />
-            </div>
-
-            <div className='flex grow shrink-0'>
-                <div style={{ width: 150, height: 150 }}>
-                    <View orbit className='h-full  sm:h-48 sm:w-full'>
-                        <Suspense fallback={<CanvasLoader/>} >
-                            <Common />
-                            <JavaBall/>
-                        </Suspense> 
-                    </View>
-                </div>
-                <Group />
-            </div>
-
-            <div className='flex grow shrink-0'>
-                <div style={{ width: 150, height: 150 }}>
-                    <View orbit className='relative h-full  sm:h-48 sm:w-full'>
-                        <Suspense fallback={null}>
-                        <Common />
-                    <PythonBall/>
-                        </Suspense>
-                    </View>
-                </div>
-                <Group />
-            </div>
-
-           
+                </div>)
+            })}
         </div>
 
     </Layout>

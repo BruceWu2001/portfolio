@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/tabs"
 import AboutMeTab from "./tabs/aboutMe/AboutMeTab"
 import ProjectTab from "./tabs/projects/ProjectsTab"
+import EducationTab from "./tabs/education/EducationTab"
 
 export function ShowcaseTabs() {
   return (
@@ -26,35 +27,9 @@ export function ShowcaseTabs() {
         <TabsTrigger value="projects">Project</TabsTrigger>
         <TabsTrigger value="education">Education</TabsTrigger>
       </TabsList>
-
-      <AboutMeTab/>
-
-     <ProjectTab/>
-
-
-      <TabsContent value="education">
-        <Card>
-          <CardHeader>
-            <CardTitle>Education</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you will be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
+        <AboutMeTab/>
+        <ProjectTab/>
+        <EducationTab/>
     </Tabs>
   )
 }
