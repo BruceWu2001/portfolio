@@ -6,7 +6,7 @@ import { useMemo, useRef } from "react"
 import { HemisphereLightHelper, SpotLightHelper, DirectionalLightHelper } from "three"
 import { Python } from "@/components/Mesh/Python"
 import { JS } from "@/components/Mesh/JS"
-
+import { ReactMesh } from "@/components/Mesh/React"
 export const JavaBall = ({position=[0,0,0]}) => {
     
     const directionalLight = useRef()
@@ -69,6 +69,29 @@ export const JSBall = ({position=[0,0,0]}) => {
             <directionalLight intensity={0.7} position={[0.6,-1,0.6]} target-position={position} ref={directionalLight4}/>
             <PurpleSphere scale={1.6} position={[0,0,0]}/>
             <JS scale={0.3} position={[0,0,0]}/>
+        </object3D>
+        )
+}
+
+export const ReactBall = ({position=[0,0,0]}) => {
+    const directionalLight = useRef()
+    const directionalLight2 = useRef()
+    const directionalLight3 = useRef()
+    const directionalLight4 = useRef()
+    useHelper(directionalLight, DirectionalLightHelper, "cyan")
+    useHelper(directionalLight2, DirectionalLightHelper, "cyan")
+    useHelper(directionalLight3, DirectionalLightHelper, "cyan")
+    useHelper(directionalLight4, DirectionalLightHelper, "cyan")
+    
+    return (
+        <object3D scale={0.6} position={position} rotation={[0,0,0]} >
+            <ambientLight intensity={10}/>
+            <directionalLight intensity={0.7} position={[-0.6,1,0.6]} target-position={position} ref={directionalLight}/>
+            <directionalLight intensity={0.7} position={[0.6,1,0.6]} target-position={position} ref={directionalLight2}/>
+            <directionalLight intensity={0.7} position={[-0.6,-1,0.6]} target-position={position} ref={directionalLight3}/>
+            <directionalLight intensity={0.7} position={[0.6,-1,0.6]} target-position={position} ref={directionalLight4}/>
+            <PurpleSphere scale={1.6} position={[0,0,0]}/>
+            <ReactMesh scale={200} position={[0,0,0]}/>
         </object3D>
         )
 }

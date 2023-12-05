@@ -43,7 +43,7 @@ export default function Home() {
 
             </SheetTrigger>
             <div className='w-1/3 h-full break-normal'> 
-                Hello, I'm Zi Jian, 梓健 and I am a CS student in SMU (Singapore Management University). I have experience in both front and backend development but I am more comfortable with frontend technologies.
+                Hello, I&apos;m Zi Jian, 梓健 and I am a CS student in SMU (Singapore Management University). I have experience in both front and backend development but I am more comfortable with frontend technologies.
             </div>
         </div>
         <Separator className='w-full h-0.5 bg-primary'/>

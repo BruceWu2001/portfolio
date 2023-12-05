@@ -4,7 +4,7 @@ import {Suspense} from 'react'
 import CanvasLoader from "../Loader"
 import { Layout } from '@/components/Mesh/utility/Layout'
 import dynamic from 'next/dynamic'
-import { JSBall, JavaBall, PythonBall } from "@/components/canvas/BallCanvas"
+import { JSBall, JavaBall, PythonBall, ReactBall } from "@/components/canvas/BallCanvas"
 import Group from "@/components/Mesh/utility/Group"
 const View = dynamic(() => import('@/components/Mesh/utility/View').then((mod) => mod.View), {
     ssr: false,
@@ -32,7 +32,7 @@ const SideNavbar = () => {
                         </Suspense>
                     </View>
                 </div>
-                <Group item1={<JSBall/>} item2={<JSBall/>} item3={<JSBall/>} />
+                <Group item1={<JSBall/>} item2={<ReactBall/>} item3={<JSBall/>} />
             </div>
 
             <div className='flex grow shrink-0'>
@@ -52,6 +52,15 @@ const SideNavbar = () => {
                     <Suspense fallback={null}>
                     <Common />
                    <PythonBall/>
+                    </Suspense>
+                </View>
+            </div>
+
+            <div style={{ width: 150, height: 150 }}>
+                <View orbit className='relative h-full  sm:h-48 sm:w-full'>
+                    <Suspense fallback={null}>
+                    <Common />
+                   <ReactBall/>
                     </Suspense>
                 </View>
             </div>
