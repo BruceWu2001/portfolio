@@ -20,14 +20,8 @@ export default function Home() {
       </Head>
         <Sheet>
     <div className='w-full h-full flex flex-col justify-center p-8'>
-            <SheetContent>
-                <SheetHeader>
-                <SheetTitle>Are you sure absolutely sure?</SheetTitle>
-                <SheetDescription>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
-                </SheetDescription>
-                </SheetHeader>
+            <SheetContent className='grid place-items-center'>
+                <Video src="https://www.youtube.com/embed/6hoNpP_iF2E?autoplay=1&fs=1"/>
             </SheetContent>
 
         <div className='w-full min-h-fit flex justify-around py-8 px-12'>
@@ -38,7 +32,6 @@ export default function Home() {
                     src="/images/global/profile.png"
                     alt="profile picture"
                     fill
-                    objectFit='cover'
                     className='rounded-full bg-secondary'
                     />
                 </div>
@@ -59,3 +52,5 @@ export default function Home() {
 
   )
 }
+export function Video(props: { src: string }) { 
+    return ( <div className="aspect-video w-5/6"> <iframe className="rounded-lg w-full h-full" src={props.src} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen frameBorder="0" /> </div> ); }
