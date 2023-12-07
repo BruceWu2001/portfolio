@@ -3,7 +3,7 @@ import { Slider } from "@/components/ui/slider"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { certs } from "@/lib/constants/skills"
-import CertViewerTemplate from "./segments/certViewerTemplate"
+import CertViewerTemplate from "./segments/CertViewerTemplate"
 
 const CustomEduView = () => {
     const division = 1;
