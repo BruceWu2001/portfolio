@@ -10,7 +10,7 @@ export function Cert({
   ...props
 }) {
   return (
-    <div className={cn("space-y-3", className)} {...props}>
+    <div className={cn("space-y-3 flex-shrink-0", className)} {...props}>
         <div className="overflow-hidden rounded-md">
         <Image
             src={cert.cover}

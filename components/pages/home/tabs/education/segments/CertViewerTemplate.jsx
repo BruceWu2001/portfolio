@@ -13,18 +13,17 @@ const CertViewerTemplate = ({certs, icon, name}) => {
         </Avatar>
         <p className="text-2xl">{name}</p>
     </div>
-    <div className="flex items-center justify-between">
-        
+    <div className="flex items-center">
         </div>
         <Separator />
-        <div className="relative my-4">
+        <div className="my-4">
         <ScrollArea>
-            <div className="flex space-x-4 pb-4">
+            <div className="w-full flex space-x-4 pb-4 ">
             {certs.reverse().map((cert) => (
                 <Cert
                 key={cert.name}
                 cert={cert}
-                className="w-[250px]"
+                // className="w-[250px]"
                 width={250}
                 height={330}
                 />

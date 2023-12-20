@@ -16,7 +16,7 @@ import CustomEduView from "./CustomEduView"
 
 const EducationTab = () => {
     return (
-        <TabsContent value="education">
+        <TabsContent value="education" className="flex-1">
         <Card>
           <CardHeader>
             <CardTitle>Education / Internship</CardTitle>
